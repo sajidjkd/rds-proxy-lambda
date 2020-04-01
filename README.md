@@ -14,31 +14,30 @@ aws lambda update-function-code --function-name rdsproxytest --zip-file fileb://
 ### secretmanager-access-policy-test (Policy Document)
 
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "secretsmanager:GetResourcePolicy",
-                "secretsmanager:GetSecretValue",
-                "secretsmanager:DescribeSecret",
-                "secretsmanager:ListSecretVersionIds"
-            ],
-            "Resource": [
-                "arn:aws:secretsmanager:us-east-1:{account}:secret:mysql5-7freetier-Gf737N"
-            ]
-        },
-        {
-            "Sid": "VisualEditor1",
-            "Effect": "Allow",
-            "Action": [
-                "secretsmanager:GetRandomPassword",
-                "secretsmanager:ListSecrets"
-            ],
-            "Resource": "*"
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [{
+			"Sid": "VisualEditor0",
+			"Effect": "Allow",
+			"Action": [
+				"secretsmanager:GetResourcePolicy",
+				"secretsmanager:GetSecretValue",
+				"secretsmanager:DescribeSecret",
+				"secretsmanager:ListSecretVersionIds"
+			],
+			"Resource": [
+				"arn:aws:secretsmanager:us-east-1:{account}:secret:mysql5-7freetier-Gf737N"
+			]
+		},
+		{
+			"Sid": "VisualEditor1",
+			"Effect": "Allow",
+			"Action": [
+				"secretsmanager:GetRandomPassword",
+				"secretsmanager:ListSecrets"
+			],
+			"Resource": "*"
+		}
+	]
 }
 
 ### Trust Relationship (Policy Document)

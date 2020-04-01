@@ -1,4 +1,4 @@
-
+### Create lamda function and upload code
 zip -r function.zip .
 
 
@@ -6,7 +6,7 @@ aws lambda create-function --function-name rds-proxy-test --zip-file fileb://fun
 
 aws lambda create-function --function-name rds-proxy-test --zip-file fileb://function.zip --handler index.handler --runtime nodejs12.x --environment "Variables={endpoint=rdsproxytest-endpoint,my_db=test}" --role arn:aws:iam::669558139762:role/lambda-ex
 
-
+### Update code
 aws lambda update-function-code --function-name rdsproxytest --zip-file fileb://function.zip
 
 
